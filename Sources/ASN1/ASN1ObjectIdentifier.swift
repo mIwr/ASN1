@@ -6,7 +6,11 @@
 //  Copyright © 2018 Leif Ibsen. All rights reserved.
 //
 
+#if canImport(SwBigInt)
+import SwBigInt //CocoaPods BigInt pod name
+#else
 import BigInt
+#endif
 
 /// The ASN1 ObjectIdentifier class
 public class ASN1ObjectIdentifier: ASN1SimpleType, CustomStringConvertible, Hashable {

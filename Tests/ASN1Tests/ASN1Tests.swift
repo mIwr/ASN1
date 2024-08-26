@@ -1,6 +1,10 @@
 import XCTest
 @testable import ASN1
+#if canImport(SwBigInt)
+import SwBigInt //CocoaPods BigInt pod name
+#else
 import BigInt
+#endif
 
 final class ASN1Tests: XCTestCase {
     

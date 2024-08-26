@@ -7,7 +7,11 @@
 //
 
 import Foundation
+#if canImport(SwBigInt)
+import SwBigInt //CocoaPods BigInt pod name
+#else
 import BigInt
+#endif
 
 /// Unsigned 8 bit value
 public typealias Byte = UInt8
