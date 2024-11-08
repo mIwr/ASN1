@@ -12,16 +12,16 @@ import SwBigInt //CocoaPods BigInt pod name
 import BigInt
 #endif
 
-/// The ASN1 ObjectIdentifier class
+/// The `ASN1` ObjectIdentifier class
 public class ASN1ObjectIdentifier: ASN1SimpleType, CustomStringConvertible, Hashable {
     
     // MARK: - Initializers
 
-    /// Constructs an ASN1ObjectIdentifier instance from a branch of an ASN1ObjectIdentifier, `nil` if `branch` is negative
+    /// Constructs an `ASN1ObjectIdentifier` instance from a branch of an `ASN1ObjectIdentifier`, `nil` if `branch` is negative
     ///
     /// - Parameters:
-    ///   - oid: Object identifier
-    ///   - branch: Branch number
+    ///   - oid: The object identifier
+    ///   - branch: The branch number
     public init?(_ oid: ASN1ObjectIdentifier, _ branch: Int) {
         if branch < 0 {
             return nil
@@ -35,9 +35,9 @@ public class ASN1ObjectIdentifier: ASN1SimpleType, CustomStringConvertible, Hash
         }
     }
 
-    /// Constructs an ASN1ObjectIdentifier instance from a String, `nil` if `oid` is wrong
+    /// Constructs an `ASN1ObjectIdentifier` instance from a String, `nil` if `oid` is wrong
     ///
-    /// - Parameter oid: String value
+    /// - Parameter oid: The String value
     public init?(_ oid: String) {
         do {
             let bytes = try ASN1ObjectIdentifier.oid2bytes(oid)
@@ -48,9 +48,9 @@ public class ASN1ObjectIdentifier: ASN1SimpleType, CustomStringConvertible, Hash
         }
     }
     
-    /// Constructs an ASN1ObjectIdentifier instance from a byte array, `nil` if `value` is wrong
+    /// Constructs an `ASN1ObjectIdentifier` instance from a byte array, `nil` if `value` is wrong
     ///
-    /// - Parameter value: Byte array
+    /// - Parameter value: The byte array
     public init?(_ value: Bytes) {
         do {
             self.oid = try ASN1ObjectIdentifier.bytes2oid(value)
@@ -74,9 +74,9 @@ public class ASN1ObjectIdentifier: ASN1SimpleType, CustomStringConvertible, Hash
 
     // MARK: - Functions
 
-    /// Get a specified branch of `self`
+    /// Get a specified branch of `self`, `nil` if the branch number is negative
     ///
-    /// - Parameter i: Branch number
+    /// - Parameter i: The branch number
     /// - Returns: The specified branch
     public func branch(_ i: Int) -> ASN1ObjectIdentifier? {
         return ASN1ObjectIdentifier(self, i)

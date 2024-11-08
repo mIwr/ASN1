@@ -12,15 +12,15 @@ import SwBigInt //CocoaPods BigInt pod name
 import BigInt
 #endif
 
-/// The ASN1 Integer class
+/// The `ASN1` Integer class
 public class ASN1Integer: ASN1, CustomStringConvertible {
 
     // MARK: - Initializers
 
-    /// Constructs an ASN1Integer instance from a big-endian 2's complement byte array
+    /// Constructs an `ASN1Integer` instance from a big-endian 2's complement byte array
     ///
-    /// - Parameter bytes: Byte array
-    /// - Throws: An ASN1Exception if `bytes` is empty
+    /// - Parameter bytes: The byte array
+    /// - Throws: An `ASN1Exception` if `bytes` is empty
     public init(_ bytes: Bytes) throws {
         guard bytes.count > 0 else {
             throw ASN1Exception.wrongData(position: 0)
@@ -30,9 +30,9 @@ public class ASN1Integer: ASN1, CustomStringConvertible {
         super.init(ASN1.TAG_Integer)
     }
 
-    /// Constructs an ASN1Integer instance from a BInt value
+    /// Constructs an `ASN1Integer` instance from a `BInt` value
     ///
-    /// - Parameter value: BInt value
+    /// - Parameter value: The `BInt` value
     public init(_ value: BInt) {
         self.value = value
         self.asBytes = self.value.asSignedBytes()
