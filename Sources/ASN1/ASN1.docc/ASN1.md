@@ -111,7 +111,7 @@ To use ASN1, in your project *Package.swift* file add a dependency like
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/leif-ibsen/ASN1", from: "2.7.0"),
+  .package(url: "https://github.com/mIwr/ASN1", from: "2.7.2"),
 ]
 ```
 
@@ -119,7 +119,7 @@ ASN1 itself depends on the [BigInt](https://leif-ibsen.github.io/BigInt/document
 
 ```swift
 dependencies: [
-  .package(url: "https://github.com/leif-ibsen/BigInt", from: "1.20.0"),
+  .package(url: "https://github.com/mIwr/BigInt", from: "1.21.2"),
 ],
 ```
 

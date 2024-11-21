@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ASN1"
-  spec.version      = "2.7.1"
+  spec.version      = "2.7.2"
   spec.summary      = "Abstract Syntax Notation One (ASN1) subset in Swift"
   spec.author       = { "Leif Ibsen" => "https://github.com/leif-ibsen" }
   spec.homepage     = "https://github.com/leif-ibsen/ASN1"
